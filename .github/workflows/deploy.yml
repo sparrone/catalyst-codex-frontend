@@ -1,4 +1,4 @@
-name: Deploy Awakening Site to A2 Hosting
+name: Deploy Catalyst Codex to A2 Hosting
 
 on:
   push:
@@ -48,6 +48,8 @@ jobs:
           echo "$SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p $PORT -H $HOST >> ~/.ssh/known_hosts
+
+          ssh -p $PORT -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $USER@$HOST "mkdir -p $TARGET_DIR"
 
           rsync -avz --delete \
             -e "ssh -p $PORT -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
