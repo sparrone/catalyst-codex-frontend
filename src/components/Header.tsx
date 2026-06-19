@@ -20,10 +20,9 @@ export default function Header() {
                     </Link>
                 </nav>
 
-                {/* Center Awakening link */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 text-lg font-bold">
                     <Link to="/" className="hover:text-yellow-400">
-                        Awakening
+                        Catalyst Codex
                     </Link>
                 </div>
 
