@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [react()],
 
   // Environment-specific base path
-  base: mode === 'production' ? '/awakening/' : '/',
+  base: mode === 'production' ? '/catalyst-codex/' : '/',
 
   // Environment variable configuration
   envDir: '.', // Look for .env files in the root directory

@@ -1,16 +1,15 @@
 Options -MultiViews
 RewriteEngine On
 
-# Handle Awakening app routing (for /awakening/* paths)
-# If request starts with /awakening and the file doesn't exist, serve awakening/index.html
-RewriteCond %{REQUEST_URI} ^/awakening/
+# Handle Catalyst Codex app routing (for /catalyst-codex/* paths)
+RewriteCond %{REQUEST_URI} ^/catalyst-codex/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^awakening/(.*)$ awakening/index.html [L]
+RewriteRule ^catalyst-codex/(.*)$ catalyst-codex/index.html [L]
 
 # Handle main site routing (for all other paths)
-# If request is NOT for awakening and file doesn't exist, serve main index.html
-RewriteCond %{REQUEST_URI} !^/awakening/
+# If request is NOT for catalyst-codex and file doesn't exist, serve main index.html
+RewriteCond %{REQUEST_URI} !^/catalyst-codex/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.html [L]
